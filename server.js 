@@ -1,0 +1,30 @@
+const express = require('express');
+const cors = require('cors');
+const fs = require('fs')
+const body-parser = require('body-parser')
+const PORT = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(body-parser.json());
+
+const STORY = './db.json';
+
+// helper to read and write db.json
+function readStories() {
+    if (!fs.existsSync(STORY)) {
+        fs.writeFileSync(STORY, JSON.stringify({ stories; []}) 
+    } 
+    return JSON.pass(fs.readFileSync(STORY, 'utf-8'));
+}
+
+// function to write into db.json
+
+
+app.use(express.static('public'));
+app.GET('/' , (req, res) => {
+    res.send('server is running')
+});
+
+app.listen(PORT, () => {
+    console.log(`My server is running at http://localhost:${PORT}`);
+});
