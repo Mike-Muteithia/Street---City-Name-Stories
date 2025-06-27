@@ -5,17 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Streets & Stories</title>
         <link rel="stylesheet" href="./css/styles.css">
+        <!-- JavaScript file with 'defer' to load after parsing HTML -->
         <script defer src="./src/index.js"></script> 
     </head>
-    <body class="">
+    <body>
+        <!-- Main header of the page -->
         <header>
+            <!-- Main title -->
             <h1>Streets & Stories</h1>
 
+            <!-- Subtitle / tageline -->
             <p>Every city and every street has a name--and every name has a story</p>
 
+            <!-- Search and action container -->
             <div id="search-container" class="search-container" data-search>
+                <!-- Input field for searching stories -->
                 <input type="text" id="searchInput" placeholder="Search for a city or street name...">
 
+                <!-- Search button with SVG icon -->
                 <button type="submit" style="border:none;background:none;cursor:pointer;" title="Search" id="searchBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" 
                         viewBox="2 0 28 20" 
@@ -29,25 +36,33 @@
                     </svg>
                 </button>
 
+                <!-- Button to open the create story modal -->
                 <button name="open" id="createBtn" class="createBtn" title="Create New Story">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                     <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
                     </svg>Create New Story
                 </button>
                 
+                <!-- Modal container for creating a new story -->
                 <div id="create-modal-container" class="create-modal-container">
                     <div id="createStoryModal" class="create-modal">
+                        <!-- Form for submitting a new story -->
                         <form id="createNewStoryForm">
                             <h2>Create New Story</h2>
+                            
+                            <!-- Input for story title (street or city name) -->
                             <label for="title">Title</label>
                             <input type="text" id="title" name="title" required placeholder="Enter city or street name...">
                             
+                            <!-- Text area for the story content -->
                             <label for="content">Content</label>
                             <textarea id="content" name="content" rows="4" required placeholder="Write the city's or street's story..."></textarea>
                             
+                            <!-- Input for region name -->
                             <label for="region">Region</label>
                             <input id="region" name="region" type="text" required placeholder="Enter region name...">
 
+                            <!-- Select dropdown for story category -->
                             <label for="category">Category</label>
                             <select id="category" name="category" required>
                                 <option>Select Category</option>
@@ -55,18 +70,26 @@
                                 <option>Street</option>
                             </select>
 
+                            <!-- Submit button to create story -->
                             <button type="submit" id="createStoryBtn">Create</button>
 
+                            <!-- Button to close the modal -->
                             <button type="button" id="closeCreateStoryModal">Close</button>
                         </form>
                     </div>
                 </div>
             </div>
         </header>
+        
+        <!-- Main content section -->
         <main id="main-container">
             <div id="results">
                 <h2>Stories</h2>
+                
+                <!-- Container for dynamically added story cards -->
                 <div id="storyList" class="cards" data-story-cards-container></div>
+                
+                <!-- Template for dynamically rendering each story card -->
                 <template data-story-card-template>
                     <div class="card">
                         <div class="title" data-story-title>title</div>
