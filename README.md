@@ -1,6 +1,6 @@
 # Streets & Stories
 
-### Author: [Your Name Here]
+### Author: Mike Muteithia
 
 ## 🌍 Description
 
